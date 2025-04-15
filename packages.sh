@@ -27,6 +27,9 @@ sudo apt install curl
 echo "Installing iputils..."
 sudo apt install iputils*
 
+echo "Installing git..."
+sudo apt install git
+
 echo "Creating local admin user 'boss'..."
 # Create the user and set the password
 sudo useradd -m -s /bin/bash boss
