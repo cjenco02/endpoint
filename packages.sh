@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Exit immediately if a command exits with a non-zero status
+# Exit on any error
 set -e
 
 echo "Updating package list..."
@@ -21,12 +21,14 @@ sudo apt install -y apt-offline
 echo "Installing IDS (Snort)..."
 sudo apt install -y snort
 
-echo "All packages installed successfully."
+echo "Creating local admin user 'boss'..."
+# Create the user and set the password
+sudo useradd -m -s /bin/bash boss
+echo "boss:AdminThisServer!" | sudo chpasswd
 
-# Optional: Enable and start services (uncomment if desired)
-# echo "Enabling and starting rsyslog and chrony..."
-# sudo systemctl enable --now rsyslog
-# sudo systemctl enable --now chrony
-# sudo systemctl enable --now snort
+# Add the user to the sudo group
+sudo usermod -aG sudo boss
 
-echo "Script completed."
+echo "User 'boss' created and added to sudo group."
+
+echo "All packages installed and user configured successfully."
