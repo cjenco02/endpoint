@@ -39,6 +39,9 @@ sudo apt install vim
 echo "Installing nano..."
 sudo apt install nano
 
+echo "Installing SSH..."
+sudo apt install ssh
+
 echo "Creating local admin user 'boss'..."
 # Create the user and set the password
 sudo useradd -m -s /bin/bash boss
