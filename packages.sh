@@ -33,6 +33,12 @@ sudo apt install git
 echo "Installing net-tools..."
 sudo apt install net-tools
 
+echo "Installing vim..."
+sudo apt install vim
+
+echo "Installing nano..."
+sudo apt install nano
+
 echo "Creating local admin user 'boss'..."
 # Create the user and set the password
 sudo useradd -m -s /bin/bash boss
